@@ -1,6 +1,36 @@
 candidate,party,office,period,raised,onhand,link
 Tim Walz,DFL,Governor,Year End 2021,3642117,3626393,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18135&amend=0
 Scott Jensen,R,Governor,Year End 2021,1234282,807437,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18690&amend=0
-Paul Gazelka,R,Governor,Year End 2021,545869,460349,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18702&amend=0
-Michelle Benson,R,Governor,Year End 2021,214069,121337,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18700&amend=0
+Paul Gazelka,R,Governor,Year End 2021,545869,460349,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18702&amend=1
+Michelle Benson,R,Governor,Year End 2021,214069,121337,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18700&amend=1
 Neil Shah,R,Governor,Year End 2021,227997,26908,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18697&amend=0
+Michael Marti,R,Governor,Year End 2021,50082,7608,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18693&amend=0
+Keith Ellison,DFL,Attorney General,Year End 2021,395084,245101,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18336&amend=0
+Dennis Smith,R,Attorney General,Year End 2021,358906,239372,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18695&amend=0
+Doug Wardlow,R,Attorney General,Year End 2021,269556,25191,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18133&amend=0
+James Schultz,R,Attorney General,Year End 2021,110150,108760,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18731&amend=0
+Lynne Torgerson,R,Attorney General,Year End 2021,20044,3018,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18692&amend=0
+Steve Simon,DFL,Secretary of State,Year End 2021,401511,461699,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=17653&amend=0
+Kim Crockett,R,Secretary of State,Year End 2021,34516,34516,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18732&amend=0
+Kelly Jahner-Byrne,R,Secretary of State,Year End 2021,27107,19646,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18712&amend=0
+John Howe,R,Secretary of State,Year End 2021,2,17061,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=17726&amend=0
+Julie Blaha,DFL,Auditor,Year End 2021,44185,27634,https://cfb.mn.gov/rptViewer/Main.php?do=viewPDF&year=21&type=pcc&period=YE&se=0&regnum=18218&amend=0
+Jim Hagedorn,R,Congressional District 1,Year End 2021,780106,627910,https://docquery.fec.gov/pdf/097/202201319485931097/202201319485931097.pdf
+Angie Craig,DFL,Congressional District 2,Year End 2021,2634300,2921566,https://docquery.fec.gov/pdf/587/202201319485824587/202201319485824587.pdf
+Tyler Kistner,R,Congressional District 2,Year End 2021,1115101,170598,https://docquery.fec.gov/pdf/231/202201319485350231/202201319485350231.pdf
+Dean Phillips,DFL,Congressional District 3,Year End 2021,1094325,685766,https://docquery.fec.gov/pdf/931/202201319486216931/202201319486216931.pdf
+Tom Weiler,R,Congressional District 3,Year End 2021,124398,100006,https://docquery.fec.gov/pdf/203/202201319485153203/202201319485153203.pdf
+Adam Noel Schwarze,R,Congressional District 3,Year End 2021,46880,46769,https://docquery.fec.gov/pdf/541/202201319485784541/202201319485784541.pdf
+Betty McCollum,DFL,Congressional District 4,Year End 2021,821895,553034,https://docquery.fec.gov/pdf/264/202201319486372264/202201319486372264.pdf
+Mikki Murray,R,Congressional District 4,Year End 2021,330,449,https://docquery.fec.gov/pdf/741/202201319485450741/202201319485450741.pdf
+Ilhan Omar,DFL,Congressional District 5,Year End 2021,1653857,438054,https://docquery.fec.gov/pdf/107/202201319486177107/202201319486177107.pdf
+Cicely Davis,DFL,Congressional District 5,Year End 2021,741067,103878,https://docquery.fec.gov/pdf/947/202201319485207947/202201319485207947.pdf
+Tom Emmer,R,Congressional District 6,Year End 2021,1336184,1077370,https://docquery.fec.gov/pdf/520/202201319485717520/202201319485717520.pdf
+Jeanne Hendricks,DFL,Congressional District 6,Year End 2021,960,287,https://docquery.fec.gov/pdf/394/202201319485484394/202201319485484394.pdf
+Michelle Fischbach,R,Congressional District 7,Year End 2021,737762,326852,https://docquery.fec.gov/pdf/383/202201319485725383/202201319485725383.pdf
+Mark Lindquist,DFL,Congressional District 7,Year End 2021,16254,14754,https://docquery.fec.gov/pdf/792/202201319485303792/202201319485303792.pdf
+Reed Olson,DFL,Congressional District 7,Year End 2021,30886,27805,https://docquery.fec.gov/pdf/104/202201319485170104/202201319485170104.pdf
+Travis Johnson,LIB,Congressional District 7,Year End 2021,2332,-7831,https://docquery.fec.gov/pdf/038/202201319475581038/202201319475581038.pdf
+Ernest Oppegaard-Peltier,DFL,Congressional District 7,Year End 2021,6382,2062,https://docquery.fec.gov/pdf/947/202201319485454947/202201319485454947.pdf
+Pete Stauber,R,Congressional District 8,Year End 2021,1177998,818317,https://docquery.fec.gov/pdf/356/202201319486170356/202201319486170356.pdf
+Theresa Lastovich,DFL,Congressional District 8,Year End 2021,713,576,https://docquery.fec.gov/pdf/700/202201179475007700/202201179475007700.pdf
