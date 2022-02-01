@@ -5,6 +5,10 @@ import Contest from "./Contest.svelte"
 let data = [];
 let contests = [];
 
+function makeIdSlug(office) {
+    return office.replace(" ", "-").toLowerCase();
+}
+
 onMount(async function() {
     const response = await fetch(` https://s3.amazonaws.com/data.minnpost/projects/minnpost-campaign-finance-dashboard-2022/camfi.json`);
     data = await response.json();
@@ -18,9 +22,47 @@ function getContestData (contest) {
 
 </script>
 
+<style>
+
+    ul {
+        margin: 0 0 1em;
+    }
+
+    li {
+        list-style-type: none;
+        display: inline-block;
+        width: 33%;
+    }
+
+    @media screen and (max-width: 1350px) {
+        li {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        ul {
+            margin-left: 1em;
+        }
+        li {
+            width: 100%;
+            margin-left: 0.5em;
+            list-style-type: disc;
+            font-size: .9em;
+            display: list-item;
+        }
+    }
+</style>
+
 {#if contests.length === 0}
     Loading...
 {:else}
+    <strong>Jump to: </strong>
+    <ul>
+        {#each contests as contest}
+            <li><a href="#{makeIdSlug(contest)}">{@html contest.replace(" ", "&nbsp;")}</a></li>
+        {/each}
+    </ul>
     {#each contests as contest}
         <Contest contestData = {getContestData(contest)}/>
     {/each}

@@ -3,6 +3,10 @@
   export let contestData;
 	import highcharts from './highcharts';
 
+  function makeIdSlug(office) {
+    return office.replace(" ", "-").toLowerCase();
+  }
+
   let candidates = []
   let raised = []
   let onhand = []
@@ -15,6 +19,11 @@
     fontWeight: 'normal',
     color: "#676767"
   }
+
+  let baseHeight = 300;
+  if (candidates.length > 2) {baseHeight = 450};
+  if (candidates.length > 5) {baseHeight = 550};
+  if (candidates.length > 7) {baseHeight = 650};
 
   let config = {
     chart: {
@@ -71,6 +80,10 @@
 		padding-bottom: .75em;
   }
 
+  .contest h4 {
+    margin-bottom: 0.25em;
+  }
+
   .right {
     text-align: right;
   }
@@ -97,13 +110,23 @@
     padding: 0.5em;
     vertical-align: middle;
   }
+
+  small {
+    font-size: .7em;
+  }
+
+  @media screen and (max-width: 960px) {
+    table {
+      font-size: 0.7em;
+    }
+  } 
 </style>
 
-<div class="contest">
+<div class="contest" id="{makeIdSlug(contestData[0].office)}">
   <h4>{contestData[0].office}</h4>
-  <p><small>Showing data as of {contestData[0].period}.</small></p>
+  <small>Showing data as of {contestData[0].period}, which runs from {#if contestData[0].office.includes("District")} October 1, 2021{:else}January 1, 2021{/if} to December 31, 2021</small>
 
-  <div class="chart" use:highcharts={config} style="height: {contestData.length*100}px"></div>
+  <div class="chart" use:highcharts={config} style="height: {baseHeight}px;"></div>
 
   <table>
     <thead>
