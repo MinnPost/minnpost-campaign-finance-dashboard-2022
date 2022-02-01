@@ -64,6 +64,13 @@
 </script>
 
 <style>
+
+  .contest {
+    border-bottom: 1px solid #d6d6da;
+		margin-bottom: 1.5em;
+		padding-bottom: .75em;
+  }
+
   .right {
     text-align: right;
   }
@@ -92,18 +99,21 @@
   }
 </style>
 
-<p><small>Showing data as of {contestData[0].period}.</small></p>
+<div class="contest">
+  <h4>{contestData[0].office}</h4>
+  <p><small>Showing data as of {contestData[0].period}.</small></p>
 
-<div class="chart" use:highcharts={config}></div>
+  <div class="chart" use:highcharts={config}></div>
 
-<table>
-  <thead>
-    <tr><th>Candidate</th><th>Party</th><th class="right">Total raised</th><th class="right">Cash on hand</th><th class="right">Link to filing</th></tr>
-  </thead>
-  <tbody>
-    {#each contestData as candidate}
-      <tr><td>{candidate.candidate}</td><td>{candidate.party}</td><td class="right">{parseFloat(candidate.raised).toLocaleString('en-US')}</td><td class="right">{parseFloat(candidate.onhand).toLocaleString('en-US')}</td><td>{#if candidate.link}<a href="{candidate.link}">Filing <i class="fas fa-document"></i></a>{/if}</td></tr>
-    {/each}
-  </tbody>
+  <table>
+    <thead>
+      <tr><th>Candidate</th><th>Party</th><th class="right">Total raised</th><th class="right">Cash on hand</th><th class="right">Link to filing</th></tr>
+    </thead>
+    <tbody>
+      {#each contestData as candidate}
+        <tr><td>{candidate.candidate}</td><td>{candidate.party}</td><td class="right">{parseFloat(candidate.raised).toLocaleString('en-US')}</td><td class="right">{parseFloat(candidate.onhand).toLocaleString('en-US')}</td><td>{#if candidate.link}<a href="{candidate.link}">Filing <i class="fas fa-document"></i></a>{/if}</td></tr>
+      {/each}
+    </tbody>
 
-</table>
+  </table>
+</div>

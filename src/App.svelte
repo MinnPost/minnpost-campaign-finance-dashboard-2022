@@ -22,7 +22,6 @@ function getContestData (contest) {
     Loading...
 {:else}
     {#each contests as contest}
-        <h4>{contest}</h4>
         <Contest contestData = {getContestData(contest)}/>
     {/each}
 {/if}
