@@ -103,7 +103,7 @@
   <h4>{contestData[0].office}</h4>
   <p><small>Showing data as of {contestData[0].period}.</small></p>
 
-  <div class="chart" use:highcharts={config} style="height: {contestData.length*150}px"></div>
+  <div class="chart" use:highcharts={config} style="height: {contestData.length*100}px"></div>
 
   <table>
     <thead>
@@ -111,7 +111,7 @@
     </thead>
     <tbody>
       {#each contestData as candidate}
-        <tr><td>{candidate.candidate}</td><td>{candidate.party}</td><td class="right">{parseFloat(candidate.raised).toLocaleString('en-US')}</td><td class="right">{parseFloat(candidate.onhand).toLocaleString('en-US')}</td><td>{#if candidate.link}<a href="{candidate.link}">Filing <i class="fas fa-document"></i></a>{/if}</td></tr>
+        <tr><td>{candidate.candidate}</td><td>{candidate.party}</td><td class="right">{parseFloat(candidate.raised).toLocaleString('en-US')}</td><td class="right">{parseFloat(candidate.onhand).toLocaleString('en-US')}</td><td class="right">{#if candidate.link}<a href="{candidate.link}">Filing <i class="fas fa-file"></i></a>{/if}</td></tr>
       {/each}
     </tbody>
 
