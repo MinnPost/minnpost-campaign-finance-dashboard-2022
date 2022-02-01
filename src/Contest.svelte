@@ -103,7 +103,7 @@
   <h4>{contestData[0].office}</h4>
   <p><small>Showing data as of {contestData[0].period}.</small></p>
 
-  <div class="chart" use:highcharts={config}></div>
+  <div class="chart" use:highcharts={config} style="height: {contestData.length*150}px"></div>
 
   <table>
     <thead>
