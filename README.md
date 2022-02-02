@@ -1,4 +1,4 @@
-# MinnPost Campaign Finance Dashboar 2022
+# MinnPost Campaign Finance Dashboard 2022
 
 The goal of this project is to give a quick overview of how much money Minnesota campaigns have raised and how much cash they have on hand 
 for each reporting period. 
