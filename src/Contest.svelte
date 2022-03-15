@@ -34,6 +34,15 @@
     },
     credits: {enabled: false},
     colors: ['#0D57A0', '#0793AB'],
+    plotOptions: {
+      series: {
+        states: {
+          inactive: {
+            enabled: false
+          }
+        }
+      }
+    },
     title: {
       text: null
     },
