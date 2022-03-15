@@ -7,11 +7,14 @@
     return office.replace(" ", "-").toLowerCase();
   }
 
+  let periods = [...new Set(contestData.map(value=>value.period))]
+  let currentPeriod = periods[0];
   let candidates = []
   let raised = []
   let onhand = []
 
-  contestData.forEach(i => candidates.push(i.candidate + " (" + i.party + ")") && raised.push(parseFloat(i.raised)) && onhand.push(parseFloat(i.onhand)));
+  let currentContestData = contestData.filter(item => item.period == currentPeriod);
+  currentContestData.forEach(i => candidates.push(i.candidate + " (" + i.party + ")") && raised.push(parseFloat(i.raised)) && onhand.push(parseFloat(i.onhand)));
 
   let styleGeneral = {
     fontFamily: '"Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif',
@@ -68,6 +71,17 @@
         data: onhand
     }]
 	};
+
+  function handleSelect() {
+    currentContestData = contestData.filter(item => item.period == currentPeriod);
+    candidates = []
+    raised = []
+    onhand = []
+    currentContestData.forEach(i => candidates.push(i.candidate + " (" + i.party + ")") && raised.push(parseFloat(i.raised)) && onhand.push(parseFloat(i.onhand)));
+    config.xAxis.categories = candidates;
+    config.series[0].data = raised;
+    config.series[1].data = onhand;
+  }
 	
 
 </script>
@@ -115,6 +129,10 @@
     font-size: .7em;
   }
 
+  .selected {
+    font-weight: 700;
+  }
+
   @media screen and (max-width: 960px) {
     table {
       font-size: 0.7em;
@@ -124,6 +142,11 @@
 
 <div class="contest" id="{makeIdSlug(contestData[0].office)}">
   <h4>{contestData[0].office}</h4>
+  Period: <select bind:value={currentPeriod} on:change="{handleSelect}">{#each periods as period}
+    
+      <option value="{period}">{period}</option>
+   
+  {/each}</select>
   <small>Showing data as of {contestData[0].period}, which runs from {#if contestData[0].office.includes("District")} October 1, 2021{:else}January 1, 2021{/if} to December 31, 2021</small>
 
   <div class="chart" use:highcharts={config} style="height: {baseHeight}px;"></div>
@@ -133,7 +156,7 @@
       <tr><th>Candidate</th><th>Party</th><th class="right">Total raised</th><th class="right">Cash on hand</th><th class="right">Link to filing</th></tr>
     </thead>
     <tbody>
-      {#each contestData as candidate}
+      {#each currentContestData as candidate}
         <tr><td>{candidate.candidate}</td><td>{candidate.party}</td><td class="right">{parseFloat(candidate.raised).toLocaleString('en-US')}</td><td class="right">{parseFloat(candidate.onhand).toLocaleString('en-US')}</td><td class="right">{#if candidate.link}<a href="{candidate.link}">Filing <i class="fas fa-file"></i></a>{/if}</td></tr>
       {/each}
     </tbody>
