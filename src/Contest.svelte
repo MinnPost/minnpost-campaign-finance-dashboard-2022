@@ -81,6 +81,9 @@
     config.xAxis.categories = candidates;
     config.series[0].data = raised;
     config.series[1].data = onhand;
+    if (candidates.length > 2) {baseHeight = 450};
+    if (candidates.length > 5) {baseHeight = 550};
+    if (candidates.length > 7) {baseHeight = 650};
   }
 	
 
@@ -142,12 +145,16 @@
 
 <div class="contest" id="{makeIdSlug(contestData[0].office)}">
   <h4>{contestData[0].office}</h4>
-  Period: <select bind:value={currentPeriod} on:change="{handleSelect}">{#each periods as period}
+  <div><small>Showing data for fundraising period {#if periods.length == 1}<strong>{currentPeriod}</strong>{:else} 
+    
+    <select bind:value={currentPeriod} on:change="{handleSelect}">{#each periods as period}
     
       <option value="{period}">{period}</option>
    
-  {/each}</select>
-  <small>Showing data as of {contestData[0].period}, which runs from {#if contestData[0].office.includes("District")} October 1, 2021{:else}January 1, 2021{/if} to December 31, 2021</small>
+    {/each}</select>{/if},
+  
+  which goes from  {currentContestData[0].periodstart} to {currentContestData[0].periodend}.</small></div>
+  
 
   <div class="chart" use:highcharts={config} style="height: {baseHeight}px;"></div>
 
