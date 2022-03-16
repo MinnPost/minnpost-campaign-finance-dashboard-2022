@@ -17,7 +17,7 @@
   currentContestData.forEach(i => candidates.push(i.candidate + " (" + i.party + ")") && raised.push(parseFloat(i.raised)) && onhand.push(parseFloat(i.onhand)));
 
   let styleGeneral = {
-    fontFamily: '"Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif',
+    fontFamily: 'ff-meta-web-pro, Helvetica, Arial, "Lucida Grande", sans-serif',
     fontSize: '18px',
     fontWeight: 'normal',
     color: "#676767"
@@ -28,12 +28,14 @@
   if (candidates.length > 5) {baseHeight = 550};
   if (candidates.length > 7) {baseHeight = 650};
 
+
   let config = {
     chart: {
       type: "bar",
+      style: styleGeneral
     },
     credits: {enabled: false},
-    colors: ['#0D57A0', '#0793AB'],
+    colors: ["#135B7E", "#5E99B5"],
     plotOptions: {
       series: {
         states: {
@@ -48,7 +50,10 @@
     },
     yAxis: {
       title: {
-          text: 'Dollars'
+        text: "Dollars"
+      },
+      labels: {
+        style: styleGeneral,
       }
     },
     xAxis: {
@@ -60,10 +65,13 @@
     legend: {
       margin: 30,
       verticalAlign: 'top',
-      align: 'center',
+      align: 'left',
       borderWidth: 0,
       itemDistance: 20,
-      itemStyle: styleGeneral
+      itemStyle: {...styleGeneral, ...{fontWeight: "bold"}},
+      symbolRadius: 3,
+      symbolWidth: 23,
+      squareSymbol: false
     },
     tooltip: {
       style: styleGeneral,
@@ -121,7 +129,7 @@
 
   table {
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "ff-meta-web-pro", Arial, Helvetica, sans-serif;
     font-size: .8em;
     line-height: 1.5em;
     text-align: left;
@@ -144,10 +152,6 @@
 
   small {
     font-size: .7em;
-  }
-
-  .selected {
-    font-weight: 700;
   }
 
   @media screen and (max-width: 960px) {
