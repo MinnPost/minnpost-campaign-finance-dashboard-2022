@@ -94,6 +94,11 @@
     if (candidates.length > 5) {baseHeight = 550};
     if (candidates.length > 7) {baseHeight = 650};
   }
+
+  function dateParse(d) {
+    let dt = new Date(d)
+    return dt.toLocaleString("en-US", {month: "long", day: "numeric", year: "numeric"})
+  }
 	
 
 </script>
@@ -162,7 +167,7 @@
    
     {/each}</select>{/if},
   
-  which goes from  {currentContestData[0].periodstart} to {currentContestData[0].periodend}.</small></div>
+  which goes from  {dateParse(currentContestData[0].periodstart)} to {dateParse(currentContestData[0].periodend)}.</small></div>
   
 
   <div class="chart" use:highcharts={config} style="height: {baseHeight}px;"></div>
