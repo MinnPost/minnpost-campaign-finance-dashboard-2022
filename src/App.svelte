@@ -10,10 +10,10 @@ function makeIdSlug(office) {
 }
 
 onMount(async function() {
-    const response = await fetch(` https://s3.amazonaws.com/data.minnpost/projects/minnpost-campaign-finance-dashboard-2022/camfi.json`);
+    const response = await fetch(` https://s3.amazonaws.com/data.minnpost/projects/spreadsheets/1WEUtmN0qbPklBIZ6iASVHBKr1lCfbsBEWFDQW_1b8SQ-.json`);
     data = await response.json();
+    data = data.camfi;
     contests = [...new Set(data.map(item => item.office))];
-    data = data;
 });
 
 function getContestData (contest) {
