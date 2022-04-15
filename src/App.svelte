@@ -10,7 +10,7 @@ function makeIdSlug(office) {
 }
 
 onMount(async function() {
-    const response = await fetch(` https://s3.amazonaws.com/data.minnpost/projects/spreadsheets/1WEUtmN0qbPklBIZ6iASVHBKr1lCfbsBEWFDQW_1b8SQ-.json`);
+    const response = await fetch(`https://s3.amazonaws.com/data.minnpost/projects/spreadsheets/1WEUtmN0qbPklBIZ6iASVHBKr1lCfbsBEWFDQW_1b8SQ.json`);
     //Sample data spreadsheet for testing purposes only https://minnpost-google-sheet-to-json.herokuapp.com/parser/?spreadsheet_id=1IFMk803czra3BtXOyK1ytjY9ggFQy3-wvh9q84mWWb0
     data = await response.json();
     data = data.camfi;
