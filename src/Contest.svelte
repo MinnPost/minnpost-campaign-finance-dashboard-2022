@@ -1,6 +1,7 @@
 <script>
 
   export let contestData;
+  export let contestBlurb;
 	import highcharts from './highcharts';
 
   function makeIdSlug(office) {
@@ -163,6 +164,9 @@
 
 <div class="contest" id="{makeIdSlug(contestData[0].office)}">
   <h4>{contestData[0].office}</h4>
+  {#if contestBlurb[0]}
+    <p>{contestBlurb[0].blurb}</p>
+  {/if}
   <div><small>Showing data for fundraising period {#if periods.length == 1}<strong>{currentPeriod}</strong>{:else} 
     
     <select bind:value={currentPeriod} on:change="{handleSelect}">{#each periods as period}

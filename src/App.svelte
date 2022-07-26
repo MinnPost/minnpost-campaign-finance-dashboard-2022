@@ -4,22 +4,33 @@ import Contest from "./Contest.svelte"
 
 let data = [];
 let contests = [];
+let blurbs = [];
 
 function makeIdSlug(office) {
     return office.replace(" ", "-").toLowerCase();
 }
 
 onMount(async function() {
-    const response = await fetch(`https://s3.amazonaws.com/data.minnpost/projects/spreadsheets/1WEUtmN0qbPklBIZ6iASVHBKr1lCfbsBEWFDQW_1b8SQ.json`);
-    //Sample data spreadsheet for testing purposes only https://minnpost-google-sheet-to-json.herokuapp.com/parser/?spreadsheet_id=1IFMk803czra3BtXOyK1ytjY9ggFQy3-wvh9q84mWWb0
+    const response = await fetch(`https://s3.amazonaws.com/data.minnpost/projects/spreadsheets/1WEUtmN0qbPklBIZ6iASVHBKr1lCfbsBEWFDQW_1b8SQ-camfi|blurbs.json`);
+    //Sample data spreadsheet for testing purposes only https://minnpost-google-sheet-to-json.herokuapp.com/parser/?spreadsheet_id=1WEUtmN0qbPklBIZ6iASVHBKr1lCfbsBEWFDQW_1b8SQ&worksheet_names=camfi|blurbs
     data = await response.json();
-    data = data.camfi;
-    contests = [...new Set(data.map(item => item.office))];
+    contests = [...new Set(data.camfi.map(item => item.office))];
+    if (data.blurbs) {
+        blurbs = [...new Set(data.blurbs.map(item => item.office))];
+    }
 });
 
 function getContestData (contest) {
-    return data.filter(item => item.office == contest)
+    return data.camfi.filter(item => item.office == contest)
 };
+
+function getContestBlurb(contest) {
+    if (data.blurbs) {
+        return data.blurbs.filter(item => item.office == contest && item.approved == "x")
+    } else {
+        return [];
+    }
+}
 
 </script>
 
@@ -65,6 +76,6 @@ function getContestData (contest) {
         {/each}
     </ul>
     {#each contests as contest}
-        <Contest contestData = {getContestData(contest)}/>
+        <Contest contestData = {getContestData(contest)} contestBlurb = {getContestBlurb(contest)}/>
     {/each}
 {/if}
